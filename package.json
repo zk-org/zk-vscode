@@ -10,7 +10,7 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:zk-vscode.helloWorld"
+    "workspaceContains:.zk"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -41,5 +41,8 @@
     "mocha": "^8.2.1",
     "typescript": "^4.1.3",
     "vscode-test": "^1.5.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^7.0.0"
   }
 }
