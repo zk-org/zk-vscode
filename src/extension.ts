@@ -7,12 +7,34 @@ import {
 	ServerOptions
 } from 'vscode-languageclient/node';
 
+const clientName = "zk"
+const clientId = "zk"
 let client: LanguageClient;
 
-export function activate(context: ExtensionContext) {
-	const clientName = "zk"
-	const clientId = "zk"
+export async function activate(context: ExtensionContext) {
+	let restartCmd = vscode.commands.registerCommand(`${clientId}.restart`, async () => {
+		await stopClient();
+		startClient(context);
+	});
 
+	let showLogsCmd = vscode.commands.registerCommand(`${clientId}.showLogs`, () => {
+		if (!client) return
+		client.outputChannel.show(true);
+	});
+
+	context.subscriptions.push(
+		restartCmd,
+		showLogsCmd,
+	);
+
+	startClient(context)
+}
+
+export async function deactivate() {
+	await stopClient()
+}
+
+function startClient(context: ExtensionContext) {
 	// If the extension is launched in debug mode then the debug server options are used
 	// Otherwise the run options are used
 	let serverOptions: ServerOptions = {
@@ -27,14 +49,14 @@ export function activate(context: ExtensionContext) {
 
 	client = new LanguageClient(clientId, clientName, serverOptions, clientOptions);
 
-
 	// Start the client. This will also launch the server.
-	client.start();
+	context.subscriptions.push(client.start());
 }
 
-export function deactivate(): Thenable<void> | undefined {
-	if (!client) {
-		return undefined;
-	}
-	return client.stop();
+async function stopClient() {
+	if (!client) return
+
+	await client.stop();
+	client.outputChannel.dispose();
+	client.traceOutputChannel.dispose();
 }

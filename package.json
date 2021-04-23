@@ -16,10 +16,30 @@
   "contributes": {
     "commands": [
       {
-        "command": "zk-vscode.helloWorld",
-        "title": "Hello World"
+        "command": "zk.restart",
+        "title": "zk: Restart"
+      },
+      {
+        "command": "zk.showLogs",
+        "title": "zk: Show Logs"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "zk",
+      "properties": {
+        "zk.trace.server": {
+          "type": "string",
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
+          "default": "messages",
+          "description": "Level of verbosity in zk's log output.",
+          "scope": "window"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
