@@ -2,9 +2,9 @@
   "name": "zk-vscode",
   "displayName": "zk-vscode",
   "description": "Visual Studio Code extension for zk",
-  "publisher": "mickael-menu",
+  "publisher": "zk-org",
   "version": "0.1.0",
-  "repository": { "type": "git", "url": "https://github.com/mickael-menu/zk-vscode.git" },
+  "repository": { "type": "git", "url": "https://github.com/zk-org/zk-vscode.git" },
   "engines": {
     "vscode": "^1.55.0"
   },
