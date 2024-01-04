@@ -1,13 +1,13 @@
 <div align="center">
 <h1>zk-vscode</h1>
-<h4>A Visual Studio Code extension for <a href="https://github.com/mickael-menu/zk"><code>zk</code></a></h4>
+<h4>A Visual Studio Code extension for <a href="https://github.com/zk-org/zk"><code>zk</code></a></h4>
 <h5><a href="https://marketplace.visualstudio.com/items?itemName=mickael-menu.zk-vscode"><b>Install from the Marketplace</b></a></h5>
 </div>
 
 
 ## Description
 
-[`zk`](https://github.com/mickael-menu/zk) is a command-line tool helping you to maintain a plain text [Zettelkasten](https://zettelkasten.de/introduction/) or [personal wiki](https://en.wikipedia.org/wiki/Personal_wiki). It provides a Language Server to augment LSP-compatible editors with many features such as auto-completion and navigation.
+[`zk`](https://github.com/zk-org/zk) is a command-line tool helping you to maintain a plain text [Zettelkasten](https://zettelkasten.de/introduction/) or [personal wiki](https://en.wikipedia.org/wiki/Personal_wiki). It provides a Language Server to augment LSP-compatible editors with many features such as auto-completion and navigation.
 
 `zk-vscode` is a Visual Studio Code client extension for `zk`'s Language Server.
 
@@ -15,7 +15,7 @@
 
 * Follow note links (including Wiki-links)
 
-* Complete links ([configure Wiki-links in `zk`'s configuration file](https://github.com/mickael-menu/zk/blob/main/docs/note-format.md))
+* Complete links ([configure Wiki-links in `zk`'s configuration file](https://github.com/zk-org/zk/blob/main/docs/note-format.md))
 
     <img alt="Link completion" width="675px" src="media/screenshots/link-completion.png"/>
 
